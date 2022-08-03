@@ -3,8 +3,10 @@
 :root {
   /*TYPOGRAPHY*/
   --ff-default: "Overpass", sans-serif;
-  --fs-300: 1, 06666667rem;
+  --fs-300: 0.875rem;
+  --fs-350: 0.9375rem;
   --fs-400: 16px;
+  --fs-600: 1.5rem; /*24px*/
   --fs-700: 1.75rem;
   --fw-400: 400;
   --fw-700: 700;
@@ -24,9 +26,13 @@
   /*SPACING*/
   --space-0: 0;
   --space-0-5: 0.5rem; /*8px*/
+  --space-0-9375: 0.9375rem; /* 15px */
   --space-1: 1rem; /*16px*/
   --space-1-125: 1.125rem; /*18px*/
+  --space-1-375: 1.375rem; /*22px*/
   --space-1-5: 1.5rem; /*24px*/
+  --space-1-7: 1.7rem; /*27.2px*/
+  --space-1-875: 1.875rem; /*30px*/
   --space-2: 2rem; /*32px*/
   --space-2-5: 2.5rem; /*40px*/
 }
@@ -107,6 +113,10 @@ select {
 }
 
 /* Selector Elements */
+html {
+  font-size: var(--fs-400, 16px);
+}
+
 body {
   color: var(--clr-neutral-secondary-400);
   background-color: var(--clr-neutral-primary-700);
@@ -118,6 +128,7 @@ body {
 
 form {
   width: 87%;
+  max-width: 412px;
   margin: 0 auto;
 }
 
@@ -140,12 +151,32 @@ button {
   letter-spacing: 1.87px;
   line-height: var(--space-1-125);
   text-transform: uppercase;
+  transition: color 0.6s cubic-bezier(0.12, 0, 0.39, 0),
+    background-color 0.6s cubic-bezier(0.12, 0, 0.39, 0);
+}
+
+button:hover {
+  color: var(--clr-primary);
+  background-color: var(--clr-neutral-secondary-400);
 }
 
 input {
+  display: block;
   padding: 0.65rem var(--space-1-125);
   border: 0;
   border-radius: 50%;
+  transition: color 0.6s cubic-bezier(0.12, 0, 0.39, 0),
+    background-color 0.6s cubic-bezier(0.12, 0, 0.39, 0);
+}
+
+input:hover {
+  color: var(--clr-neutral-secondary-400);
+  background-color: var(--clr-primary);
+}
+
+input:focus {
+  color: var(--clr-neutral-secondary-400);
+  background-color: var(--clr-neutral-primary-200);
 }
 
 /* Utilities */
@@ -163,8 +194,20 @@ input {
   justify-content: space-between;
 }
 
+.fs-14 {
+  font-size: var(--fs-300);
+}
+
+.fs-24 {
+  font-size: var(--fs-600);
+}
+
 .fw-bold {
   font-weight: var(--fw-700);
+}
+
+.lh-22 {
+  line-height: var(--space-1-375);
 }
 
 .clr-pri-200 {
@@ -177,6 +220,14 @@ input {
 
 .gradient {
   background: linear-gradient(var(--clr-gradient-1), var(--clr-gradient-2));
+}
+
+.corner {
+  border-radius: var(--fs-400);
+}
+
+.pointer:hover {
+  cursor: pointer;
 }
 
 /* Block */
@@ -198,5 +249,27 @@ input {
   h2,
   p {
     text-align: center;
+  }
+}
+
+@media (min-width: 615px) {
+  .padding-all {
+    padding: var(--space-2) var(--space-1-7);
+  }
+
+  .fs-14:not(p, button) {
+    font-size: var(--fs-400);
+  }
+
+  .lh-22 {
+    line-height: var(--space-1-5);
+  }
+
+  .margin-v:not(div) {
+    margin: var(--space-1-875) var(--space-0) var(--space-0-9375);
+  }
+
+  .margin-v:not(h2) {
+    margin: var(--space-1-5) var(--space-0) var(--space-2);
   }
 }
