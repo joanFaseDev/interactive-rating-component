@@ -1,0 +1,202 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap");
+
+:root {
+  /*TYPOGRAPHY*/
+  --ff-default: "Overpass", sans-serif;
+  --fs-300: 1, 06666667rem;
+  --fs-400: 16px;
+  --fs-700: 1.75rem;
+  --fw-400: 400;
+  --fw-700: 700;
+  --line-h-400: 1.375rem;
+  --line-h-700: 1.5rem;
+
+  /*COLORS*/
+  --clr-primary: #fc7614;
+  --clr-neutral-primary-100: #969fad;
+  --clr-neutral-primary-200: #7c8798;
+  --clr-neutral-primary-400: #262e38;
+  --clr-neutral-primary-700: #131518;
+  --clr-neutral-secondary-400: #fff;
+  --clr-gradient-1: #232a34;
+  --clr-gradient-2: #181e27;
+
+  /*SPACING*/
+  --space-0: 0;
+  --space-0-5: 0.5rem; /*8px*/
+  --space-1: 1rem; /*16px*/
+  --space-1-125: 1.125rem; /*18px*/
+  --space-1-5: 1.5rem; /*24px*/
+  --space-2: 2rem; /*32px*/
+  --space-2-5: 2.5rem; /*40px*/
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Selector Elements */
+body {
+  color: var(--clr-neutral-secondary-400);
+  background-color: var(--clr-neutral-primary-700);
+  font-family: var(--ff-default);
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+}
+
+form {
+  width: 87%;
+  margin: 0 auto;
+}
+
+h2 {
+  --space-1-5: var(--space-1);
+}
+
+p {
+  color: var(--clr-neutral-primary-100);
+}
+
+button {
+  color: var(--clr-neutral-secondary-400);
+  background-color: var(--clr-primary);
+  width: 100%;
+  padding: 1rem;
+  border: 0;
+  border-radius: 100px;
+  font-weight: var(--fw-700);
+  letter-spacing: 1.87px;
+  line-height: var(--space-1-125);
+  text-transform: uppercase;
+}
+
+input {
+  padding: 0.65rem var(--space-1-125);
+  border: 0;
+  border-radius: 50%;
+}
+
+/* Utilities */
+.padding-all {
+  padding: var(--space-1-5) var(--space-1-5) var(--space-2);
+}
+
+.margin-v {
+  margin: var(--space-1-5) var(--space-0);
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.fw-bold {
+  font-weight: var(--fw-700);
+}
+
+.clr-pri-200 {
+  color: var(--clr-neutral-primary-200);
+}
+
+.bg-pri-400 {
+  background-color: var(--clr-neutral-primary-400);
+}
+
+.gradient {
+  background: linear-gradient(var(--clr-gradient-1), var(--clr-gradient-2));
+}
+
+/* Block */
+.card__one {
+  width: var(--space-2-5);
+  height: var(--space-2-5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+/* Better layout for really tiny devices */
+@media (max-width: 335px) {
+  .flex {
+    justify-content: center;
+  }
+
+  h2,
+  p {
+    text-align: center;
+  }
+}

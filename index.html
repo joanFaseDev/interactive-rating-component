@@ -1,49 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Interactive rating component</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Frontend Mentor | Interactive rating component</title>
+  </head>
+  <body>
+    <form action="#feedback" class="card [ padding-all gradient ]">
+      <div class="card__one [ bg-pri-400 ]">
+        <img
+          src="./images/icon-star.svg"
+          alt="An orange star in a sphere."
+          class="card__icon"
+        />
+      </div>
+      <div class="card__two">
+        <h2 class="card__title [ margin-v ]">How did we do?</h2>
+        <p class="card__feedbacks">
+          Please let us know how we did with your support request. All feedback
+          is appreciated to help us improve our offering!
+        </p>
+      </div>
+      <div class="card__three [ margin-v flex fw-bold ]">
+        <input
+          class="card__grade grade-1 [ clr-pri-200 bg-pri-400 ]"
+          type="button"
+          value="1"
+        />
+        <input
+          class="card__grade grade-2 [ clr-pri-200 bg-pri-400 ]"
+          type="button"
+          value="2"
+        />
+        <input
+          class="card__grade grade-3 [ clr-pri-200 bg-pri-400 ]"
+          type="button"
+          value="3"
+        />
+        <input
+          class="card__grade grade-4 [ clr-pri-200 bg-pri-400 ]"
+          type="button"
+          value="4"
+        />
+        <input
+          class="card__grade grade-5 [ clr-pri-200 bg-pri-400 ]"
+          type="button"
+          value="5"
+        />
+      </div>
+      <div class="card__fourth">
+        <button class="card__btn">Submit</button>
+      </div>
+    </form>
+    <!-- Rating state start -->
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <!-- Rating state end -->
 
-  <!-- Rating state start -->
+    <!-- Thank you state start -->
 
-  How did we do?
+    <!-- You selected -->
+    <!-- Add rating here -->
+    <!-- out of 5 Thank you! We appreciate you taking the time to give a rating. If
+    you ever need more support, don’t hesitate to get in touch! -->
 
-  Please let us know how we did with your support request. All feedback is appreciated 
-  to help us improve our offering!
-
-  1 2 3 4 5
-
-  Submit
-
-  <!-- Rating state end -->
-
-  <!-- Thank you state start -->
-
-  You selected <!-- Add rating here --> out of 5
-
-  Thank you!
-
-  We appreciate you taking the time to give a rating. If you ever need more support, 
-  don’t hesitate to get in touch!
-
-  <!-- Thank you state end -->
-
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+    <!-- Thank you state end -->
+  </body>
 </html>
