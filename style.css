@@ -7,7 +7,7 @@
   --fs-350: 0.9375rem;
   --fs-400: 16px;
   --fs-600: 1.5rem; /*24px*/
-  --fs-700: 1.75rem;
+  --fs-700: 1.75rem; /*28px*/
   --fw-400: 400;
   --fw-700: 700;
   --line-h-400: 1.375rem;
@@ -25,7 +25,10 @@
 
   /*SPACING*/
   --space-0: 0;
+  --space-0-3125: 0.3125rem; /*5px*/
   --space-0-5: 0.5rem; /*8px*/
+  --space-0-625: 0.625rem; /*10px*/
+  --space-0-75: 0.75rem; /*12px*/
   --space-0-9375: 0.9375rem; /* 15px */
   --space-1: 1rem; /*16px*/
   --space-1-125: 1.125rem; /*18px*/
@@ -34,7 +37,11 @@
   --space-1-7: 1.7rem; /*27.2px*/
   --space-1-875: 1.875rem; /*30px*/
   --space-2: 2rem; /*32px*/
+  --space-2-125: 2.125rem; /*34px*/
+  --space-2-3125: 2.3125rem; /*37px*/
   --space-2-5: 2.5rem; /*40px*/
+  --space-2-8125: 2.8125rem; /*45px*/
+  --space-3: 3rem; /*48px*/
 }
 
 /* Box sizing rules */
@@ -123,7 +130,6 @@ body {
   font-family: var(--ff-default);
   display: grid;
   place-content: center;
-  min-height: 100vh;
 }
 
 form {
@@ -180,12 +186,24 @@ input:focus {
 }
 
 /* Utilities */
+.half-width {
+  width: 50%;
+}
+
 .padding-all {
   padding: var(--space-1-5) var(--space-1-5) var(--space-2);
 }
 
+.padding-all-submit {
+  padding: var(--space-2-125) var(--space-1-5) var(--space-2-3125);
+}
+
 .margin-v {
   margin: var(--space-1-5) var(--space-0);
+}
+
+.margin-top {
+  margin-top: var(--space-0-625);
 }
 
 .flex {
@@ -194,8 +212,22 @@ input:focus {
   justify-content: space-between;
 }
 
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.txt-center {
+  text-align: center;
+}
+
 .fs-14 {
   font-size: var(--fs-300);
+}
+
+.fs-15 {
+  font-size: var(--fs-350);
 }
 
 .fs-24 {
@@ -208,6 +240,10 @@ input:focus {
 
 .lh-22 {
   line-height: var(--space-1-375);
+}
+
+.clr-pri {
+  color: var(--clr-primary);
 }
 
 .clr-pri-200 {
@@ -226,6 +262,10 @@ input:focus {
   border-radius: var(--fs-400);
 }
 
+.round-corner {
+  border-radius: 100px;
+}
+
 .pointer:hover {
   cursor: pointer;
 }
@@ -238,6 +278,14 @@ input:focus {
   justify-content: center;
   align-items: center;
   border-radius: 50%;
+}
+
+.card__feedback {
+  width: 62%;
+  padding: var(--space-0-3125) var(--space-0-75);
+  margin: var(--space-1-5) auto;
+  text-align: center;
+  font-size: var(--fs-300);
 }
 
 /* Better layout for really tiny devices */
@@ -253,12 +301,22 @@ input:focus {
 }
 
 @media (min-width: 615px) {
+  /* BEFORE & AFTER SUBMIT */
+
+  p {
+    font-size: var(--fs-350);
+  }
+
   .padding-all {
-    padding: var(--space-2) var(--space-1-7);
+    padding: var(--space-2) var(--space-2-3125);
   }
 
   .fs-14:not(p, button) {
     font-size: var(--fs-400);
+  }
+
+  .fs-24 {
+    font-size: var(--fs-700);
   }
 
   .lh-22 {
@@ -271,5 +329,33 @@ input:focus {
 
   .margin-v:not(h2) {
     margin: var(--space-1-5) var(--space-0) var(--space-2);
+  }
+
+  .corner {
+    border-radius: var(--fs-700);
+  }
+
+  .card__one {
+    width: var(--space-3);
+    height: var(--space-3);
+  }
+
+  /* EXCLUSIVELY AFTER SUBMIT */
+  form {
+    min-width: 412px;
+  }
+
+  .padding-media {
+    padding: var(--space-2-8125) var(--space-2-3125);
+  }
+
+  .card__feedback {
+    width: 57%;
+    margin: var(--space-2) auto;
+    font-size: var(--fs-350);
+  }
+
+  .fs-media {
+    font-size: var(--fs-350);
   }
 }
