@@ -7,15 +7,21 @@ let inputsLength = undefined;
 registerFeedback(inputsCollection);
 
 form.addEventListener(`submit`, (evt) => {
-  evt.preventDefault();
+  cardHandler(evt);
+});
+
+/* Handle most of the logic relative to the 'thank you' card */
+function cardHandler(event) {
+  event.preventDefault();
   removeFormEntries();
   changeFormLayout();
   const divImg = createNewImage();
   const feedback = createFeedbackMessage();
   const thankYou = createThankYouMessage();
   form.append(divImg, feedback, thankYou);
-});
+}
 
+/* Get all the form's contents and remove it */
 function removeFormEntries() {
   const entries = Array.from(form.children);
   entries.forEach((elem) => {
@@ -23,12 +29,13 @@ function removeFormEntries() {
   });
 }
 
+/* Slightly change the card's layout before updating the 'thank you' content */
 function changeFormLayout() {
   form.classList.remove(`padding-all`);
   form.classList.add(`padding-all-submit`, `padding-media`);
 }
 
-/*Listen to every input's click event and save the value of the last clicked input */
+/* Listen to every input's click event and save the value of the last clicked input */
 function registerFeedback(collection) {
   const inputs = Array.from(collection);
   inputsLength = inputs.length;
@@ -40,6 +47,7 @@ function registerFeedback(collection) {
   });
 }
 
+/* Check if User left a feedback then modify the 'thank you' message accordingly */
 function checkFeedbackInput() {
   if (!feedback) {
     return `You selected nothing!`;
@@ -48,6 +56,7 @@ function checkFeedbackInput() {
   }
 }
 
+/* Create the illustration's content and CSS style of the 'thank you' card */
 function createNewImage() {
   const div = document.createElement(`div`);
   const image = document.createElement(`img`);
@@ -57,6 +66,7 @@ function createNewImage() {
   return div;
 }
 
+/* Create the grading's content and CSS style of the 'thank you' card */
 function createFeedbackMessage() {
   const div = document.createElement(`div`);
   const paragraph = document.createElement(`p`);
@@ -68,6 +78,7 @@ function createFeedbackMessage() {
   return div;
 }
 
+/* Create the text's content and CSS style of the 'thank you' card */
 function createThankYouMessage() {
   const div = document.createElement(`div`);
   const h2 = document.createElement(`h2`);
